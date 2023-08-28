@@ -1,0 +1,122 @@
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid" [class]="currLanguage + '-container'">
+    <a class="navbar-brand"
+      ><img
+        routerLink="/home"
+        class="logo-img"
+        src="../../../assets/images/logo.png"
+        alt="Dor Levi"
+    /></a>
+    <button class="navbar-toggler">
+      <i
+        class="fa-solid fa-bars navbar-toggle-button"
+        (click)="isMenuOpen = !isMenuOpen"
+      ></i>
+      <div class="navbar-menu" [ngClass]="{ 'open-menu': isMenuOpen }">
+        <div class="navbar-nav w-100">
+          <ng-container *ngFor="let page of pages.slice().reverse()">
+            <a
+              *ngIf="page[0] !== langData.blogs"
+              class="menu-item"
+              routerLinkActive="focus"
+              [routerLink]="page[1]"
+              >{{ page[0] }}</a
+            >
+            <ng-container *ngIf="page[0] === langData.blogs">
+              <a
+                class="menu-item dropdown-toggle"
+                (click)="isBlogMenuOpen = !isBlogMenuOpen"
+                [style]="'color:' + blogLinkColor"
+                ><span class="caret"></span> {{ langData.blogs }} &nbsp;</a
+              >
+              <ul
+                class="navbar-nav w-100 blogs-menu"
+                [ngClass]="{ 'hidden-menu': !isBlogMenuOpen }"
+              >
+                <a
+                  class="menu-item"
+                  routerLink="blogs/crypto-coins"
+                  routerLinkActive="focus"
+                  >{{ langData.cryptoCurrencies }}</a
+                >
+                <a
+                  class="menu-item"
+                  routerLink="blogs/israel-stock-exchange"
+                  routerLinkActive="focus"
+                  >{{ langData.israelStock }}</a
+                >
+                <a
+                  class="menu-item"
+                  routerLink="blogs/america-stock-exchange"
+                  routerLinkActive="focus"
+                  >{{ langData.americaStock }}</a
+                >
+              </ul>
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul
+        class="navbar-nav w-100 d-flex justify-content-between align-items-center"
+      >
+        <ng-container *ngFor="let page of pages">
+          <li
+            [class]="page[0] === langData.blogs ? 'dropdown ' : '' + 'nav-item'"
+          >
+            <a
+              *ngIf="page[0] !== langData.blogs"
+              class="nav-link"
+              routerLinkActive="focus"
+              [routerLink]="page[1]"
+              >{{ page[0] }}</a
+            >
+            <a
+              *ngIf="page[0] === langData.blogs"
+              class="nav-link dropdown-toggle"
+              [style]="'color:' + blogLinkColor"
+              ><span class="caret"></span> {{ langData.blogs }}
+            </a>
+            <ul
+              class="dropdown-menu blogs-dropdown"
+              [class]="'blogs-' + currLanguage"
+            >
+              <li routerLink="blogs/crypto-coins">
+                <a>{{ langData.cryptoCurrencies }}</a>
+              </li>
+              <li routerLink="blogs/israel-stock-exchange">
+                <a>{{ langData.israelStock }}</a>
+              </li>
+              <li routerLink="blogs/america-stock-exchange">
+                <a>{{ langData.americaStock }}</a>
+              </li>
+            </ul>
+          </li>
+        </ng-container>
+        <li class="contact-img">
+          <a [href]="myWhatsAppLink" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </li>
+        <li class="contact-img">
+          <a
+            href="https://www.facebook.com/groups/271073134923240"
+            target="_blank"
+          >
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </li>
+        <li class="contact-img">
+          <a href="mailto:ddoorr1185@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<app-language-button [currLanguage]="currLanguage"></app-language-button>
+
+<div class="header-bg-fixed"></div>

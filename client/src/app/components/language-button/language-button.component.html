@@ -1,0 +1,28 @@
+<div
+  class="language-area-pop"
+  (click)="toggleLangMenu()"
+  cdkDrag
+  (cdkDragEnded)="onDragEnd($event)"
+>
+  <a>
+    <div class="lang-toggler">
+      <img [src]="langImagePath" alt="" class="current-lang-img" />
+      <span>{{ currLanguage.slice(0, 2) }}</span>
+    </div>
+    <ul
+      *ngIf="isLangOpen"
+      class="dropdown-menu language-dropdown"
+      [class]="classToAdd"
+    >
+      <!-- [class]="currLanguage + '-dropdown'" -->
+      <li (click)="changeLanguage('hebrew')" class="single-lang">
+        <a>עברית</a>
+        <img src="../../../assets/images/hebrew.png" alt="hebrew" />
+      </li>
+      <li (click)="changeLanguage('english')" class="single-lang">
+        <a>English</a>
+        <img src="../../../assets/images/english.png" alt="english" />
+      </li>
+    </ul>
+  </a>
+</div>

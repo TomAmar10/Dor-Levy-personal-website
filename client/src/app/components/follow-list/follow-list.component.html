@@ -1,0 +1,86 @@
+<div class="follow-lists">
+  <div class="image-area" [class]="currLanguage + '-image'">
+    <div class="main-paragraph" [class]="currLanguage + '-main'">
+      <h1 class="page-main-header">{{ langData.header }}</h1>
+      <p [innerHTML]="langData.paragraph"></p>
+    </div>
+    <img [src]="imageUrl" alt="" />
+  </div>
+  <div class="table-container">
+    <h5>{{ langData.crypto }}</h5>
+    <table class="table">
+      <thead>
+        <tr class="table-top-row">
+          <th scope="col">#</th>
+          <th scope="col">{{ langData.name }}</th>
+          <th scope="col">{{ langData.symbol }}</th>
+          <th scope="col">{{ langData.price }}</th>
+          <th scope="col">{{ langData.change }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let coin of coins$ | async; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ coin.name }}</td>
+          <td>{{ coin.symbol | uppercase }}</td>
+          <td>
+            {{ coin.current_price | currency : "USD" : "symbol" : "1.2-4" }}
+          </td>
+          <td>{{ coin.price_change_percentage_24h | number : "1.2-2" }}%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-container">
+    <h5>{{ langData.america }}</h5>
+    <table class="table">
+      <thead>
+        <tr class="table-top-row">
+          <th scope="col">#</th>
+          <th scope="col">{{ langData.name }}</th>
+          <th scope="col">{{ langData.symbol }}</th>
+          <th scope="col">{{ langData.price }}</th>
+          <th scope="col">{{ langData.change }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stock of americaStocks$ | async; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ stock.name }}</td>
+          <td>{{ stock.symbol | uppercase }}</td>
+          <td>
+            {{ stock.price | currency : "USD" : "symbol" : "1.2-4" }}
+          </td>
+          <td>{{ stock.change | number : "1.2-2" }}%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-container">
+    <h5>{{ langData.israel }}</h5>
+    <table class="table">
+      <thead>
+        <tr class="table-top-row">
+          <th scope="col">#</th>
+          <th scope="col">{{ langData.name }}</th>
+          <th scope="col">{{ langData.symbol }}</th>
+          <th scope="col">{{ langData.price }}</th>
+          <th scope="col">{{ langData.change }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="let stock of israelStocks$ | async; let i = index"
+        >
+          <tr *ngIf="stock.name !== ''">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ stock.name }}</td>
+            <td>{{ stock.symbol | uppercase }}</td>
+            <td>{{ stock.price | number : "1.2-4" }}</td>
+            <td>{{ stock.change | number : "1.2-2" }}%</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

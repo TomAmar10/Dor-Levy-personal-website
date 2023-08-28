@@ -1,0 +1,54 @@
+<div class="single-blog" *ngIf="article">
+  <h1 class="page-main-header">
+    {{ isEnglish ? article.name_english || article.name : article.name }}
+  </h1>
+  <div class="details-container">
+    <p
+      [innerHTML]="
+        isEnglish ? article.details_english || article.details : article.details
+      "
+    ></p>
+  </div>
+  <div class="hr-holder">
+    <hr />
+  </div>
+  <div class="share-post-area">
+    <div>
+      <a [href]="whatsappLink" target="_blank"
+        ><i class="fa-brands fa-whatsapp"></i
+      ></a>
+      <a [href]="telegramLink" target="_blank"
+        ><i class="fa-brands fa-telegram"></i
+      ></a>
+      <a (click)="messenger()" style="cursor: pointer">
+        <i class="fa-brands fa-facebook-messenger"></i>
+      </a>
+      <a (click)="copy()" style="cursor: pointer">
+        <i class="fa-solid fa-link"></i>
+      </a>
+    </div>
+  </div>
+  <div class="links-container">
+    <a routerLink="/blogs/crypto-coins">{{ langData.cryptoLink }}</a>
+    <a routerLink="/blogs/america-stock-exchange">{{ langData.americaLink }}</a>
+    <a routerLink="/blogs/israel-stock-exchange">{{ langData.israelLink }}</a>
+  </div>
+  <div class="hr-holder">
+    <hr />
+  </div>
+  <h4>{{ langData.moreBlogs }}</h4>
+</div>
+
+<div class="carousel-container">
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let blog of moreArticles">
+      <app-blog-card
+        [isCarousel]="true"
+        [langData]="langData"
+        [blog]="blog"
+        [isEnglish]="isEnglish"
+        [currLanguage]="currLanguage"
+      ></app-blog-card>
+    </ng-template>
+  </owl-carousel-o>
+</div>

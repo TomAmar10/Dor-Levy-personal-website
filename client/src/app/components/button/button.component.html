@@ -1,0 +1,8 @@
+<button
+  class="app-button"
+  [ngClass]="darkBtn ? 'dark' : ''"
+  [style]="style"
+>
+  {{ buttonText }}
+  <span *ngIf="darkBtn">»</span>
+</button>

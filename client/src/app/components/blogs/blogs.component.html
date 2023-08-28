@@ -1,0 +1,54 @@
+<div class="blog-container">
+  <h1 class="page-main-header">{{ blogHeader }}</h1>
+  <p class="blog-intro" [innerHtml]="blogParagraph"></p>
+  <div class="main-container">
+    <div class="search-container">
+      <div class="dropdown">
+        <input
+          type="text"
+          class="search-input form-control"
+          placeholder="{{ langData.search }}"
+          #txt
+          [(ngModel)]="userSearch"
+          (input)="change(txt.value)"
+          (blur)="blurInput()"
+        />
+        <div
+          class="dropdown-content"
+          [ngClass]="(searchBlogs$ | async) && isFocus && userSearch && 'show'"
+        >
+          <div
+            [routerLink]="getBlogRoute(blog)"
+            *ngFor="let blog of searchBlogs$ | async"
+            (click)="choose(blog)"
+          >
+            <img src="../../../assets/images/blog-bg.jpg" alt="" />
+            <div class="details-container">
+              <div>
+                <h6 class="article-search-name">
+                  {{ isEnglish ? blog.name_english || blog.name : blog.name }}
+                </h6>
+                <span>{{
+                  isEnglish
+                    ? blog.second_name_english || blog.second_name
+                    : blog.second_name
+                }}</span>
+              </div>
+              <span class="subject">{{ blogHeader }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards-container">
+      <app-blog-card
+        *ngFor="let blog of blogs$ | async"
+        [currLanguage]="currLanguage"
+        [isEnglish]="isEnglish"
+        [blog]="blog"
+        [langData]="langData"
+      ></app-blog-card>
+    </div>
+  </div>
+</div>

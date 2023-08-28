@@ -1,0 +1,30 @@
+
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  scroll-behavior: smooth;
+  min-height: 90vh;
+  direction: rtl;
+}
+
+.english{
+  direction: ltr;
+}
+
+.app {
+  z-index: 15;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-30px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}

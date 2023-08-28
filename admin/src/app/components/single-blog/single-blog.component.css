@@ -1,0 +1,95 @@
+.blog-box {
+  border: 2px black solid;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+  direction: rtl;
+  color: black;
+  width: 100%;
+}
+h3 {
+  cursor: pointer;
+}
+.blog-box-header {
+  padding: 1rem 2rem;
+  border-radius: 10px 10px 0 0;
+  min-height: 4.7rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background-color: rgb(227, 219, 170);
+}
+h6 {
+  padding: 1rem 2rem 0;
+  min-height: 2.2rem;
+}
+.subjects > span {
+  margin: 0 1rem;
+}
+.fa-globe {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.tools {
+  margin-left: 1rem;
+  font-size: 1.3rem;
+}
+.tools span {
+  position: absolute;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.tools span:hover {
+  font-size: 1.3rem;
+}
+.delete {
+  margin-top: -2rem;
+}
+
+.blog-details {
+  padding: 1rem 2rem;
+  color: black;
+  justify-content: space-between;
+}
+.blog-details > p {
+  height: 15rem;
+  overflow-y: scroll;
+}
+.blog-details > .higher {
+  height: 41rem;
+  max-height: 41rem;
+}
+label {
+  text-decoration: underline;
+  margin-left: 2rem;
+  font-weight: bold;
+}
+
+.folded h6,
+.folded p,
+.folded hr {
+  display: none;
+}
+
+.english {
+  direction: ltr;
+}
+
+.wideHeader {
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+  .blog-details > .higher {
+    height: 25rem;
+    max-height: 30rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .blog-box-header {
+    padding: 1rem;
+  }
+}

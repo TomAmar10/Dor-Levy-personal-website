@@ -1,0 +1,21 @@
+<div class="auth-modal">
+  <form [formGroup]="authForm" (submit)="login()">
+    <h3 class="auth-header">התחברות למערכת</h3>
+    <div class="error-area">
+      <span class="error-msg" *ngIf="!isValid"
+        >שם משתמש או סיסמא אינם נכונים</span
+      >
+    </div>
+    <div class="form-group">
+      <label class="form-label">שם משתמש:</label>
+      <input type="text" formControlName="username" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label class="form-label">סיסמא:</label>
+      <input type="password" formControlName="password" class="form-control" />
+    </div>
+    <button class="submit-auth-btn">התחבר</button>
+  </form>
+</div>
+
+<div class="auth-modal-bg"></div>

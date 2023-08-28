@@ -1,0 +1,160 @@
+body {
+  /* VARIABLES */
+  --bg-color: rgb(37, 35, 35);
+  --bg-color-secondary: rgb(249, 244, 234);
+  --bg-color-third: #d4af37d0;
+
+  --text-color: rgb(249, 244, 234);
+  --text-color-secondary: #d4af37d0;
+  --text-color-third: black;
+
+  --text-color-lighter: #e9d38bd0;
+  --text-color-darker: rgb(136, 111, 45);
+  --fourth-color: #ebe9e9;
+  --fifth-color: #634e09d0;
+  --page-main-header-bg: -webkit-linear-gradient(
+    #d4af37d0,
+    #edcd65d0,
+    #f5f3edd0
+  );
+  --bg-img-main: linear-gradient(
+    to right,
+    rgba(37, 37, 37, 0.5) 30%,
+    rgba(0, 0, 0, 0.7) 80%
+  );
+
+  --home-page-btn-bg: linear-gradient(
+    to right,
+    #c19c21d0,
+    #d0b458d0,
+    #d7ba59d0,
+    #bd9924d0
+  );
+  --darker-text-color: #453605d0;
+  --benefit-bg: rgba(54, 54, 54, 0.6);
+  --back-text-color: rgb(99, 98, 98);
+  -error-color: red;
+  --app-button-bg: linear-gradient(to right, #ffffff, #ffffffd0, #fcfcfc);
+  --app-button-bg-dark: linear-gradient(
+    to right,
+    #ab9446,
+    #ab9446d9,
+    #ab9446d6
+  );
+  --follow-list-bg: linear-gradient(
+    to right,
+    rgba(213, 210, 210, 0.95),
+    rgb(255, 255, 255)
+  );
+  --follow-list-row: rgb(66, 65, 65, 0.8);
+  --follow-list-row-first: rgb(38, 38, 38, 0.8);
+  --footer-bg: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  --menu-item-hover-text: rgb(203, 199, 199);
+  --menu-item-hover-bg: rgb(44, 43, 43);
+  --links-page-bg: rgba(0, 0, 0, 0.8);
+  --syllabus-bg: rgba(255, 255, 255, 0.05);
+  --card-cover-bg: rgb(255, 255, 255, 0.9);
+  --links-hover-color: rgb(233, 194, 111);
+  --webkit-scrollbar-bg: #eed06dd0;
+
+  /* VARIABLES */
+
+  background-color: var(--bg-color);
+  background-image: var(--bg-img-main);
+  color: var(--text-color);
+}
+
+.page-main-header {
+  font-size: 3rem;
+  background: var(--page-main-header-bg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  border-bottom: 2px var(--text-color) solid;
+  background-color: #eed06dd0;
+}
+@media (prefers-color-scheme: dark) {
+  .page-main-header {
+    background: var(--page-main-header-bg);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-color: #eed06dd0;
+  }
+}
+.samsungWeb .page-main-header {
+  background: none;
+  background-color: transparent;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  color: rgb(233, 194, 111);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--webkit-scrollbar-bg);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-color-third);
+}
+
+.owl-stage {
+  display: flex !important;
+  gap: 1rem !important;
+  justify-content: center !important;
+}
+.owl-stage .owl-item {
+  padding: 0 !important;
+  width: fit-content !important;
+}
+/* Carousel buttons */
+.carousel-container .owl-nav {
+  position: absolute;
+  display: flex !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  top: 40%;
+}
+.carousel-container .owl-next,
+.carousel-container .owl-prev {
+  background: rgba(224, 221, 221, 0.752) !important;
+  color: #222 !important;
+  height: 50px !important;
+  width: 50px !important;
+  border-radius: 50% !important;
+  position: relative;
+}
+.carousel-container .owl-prev {
+  left: -4rem;
+}
+.carousel-container .owl-next {
+  right: -4rem;
+}
+.carousel-container .owl-next:hover,
+.carousel-container .owl-prev:hover {
+  background: #ffffffd0 !important;
+}
+
+.carousel-container .owl-next i,
+.carousel-container .owl-prev i {
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .carousel-container .owl-nav {
+    display: none !important;
+  }
+}

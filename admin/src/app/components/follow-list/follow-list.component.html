@@ -1,0 +1,235 @@
+<div class="follow-lists">
+  <h2>עדכון רשימות המעקב</h2>
+  <div class="lists-container">
+    <form [formGroup]="cryptoForm" (ngSubmit)="submitCrypto()">
+      <h5>קריפטו</h5>
+      <div class="form-group">
+        <div class="example-label">
+          <label class="form-label">מטבע 1:</label> (שם - דוגמא : ripple)
+        </div>
+        <input type="text" formControlName="coin1" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">מטבע 2:</label>
+        <input type="text" formControlName="coin2" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">מטבע 3:</label>
+        <input type="text" formControlName="coin3" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">מטבע 4:</label>
+        <input type="text" formControlName="coin4" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">מטבע 5:</label>
+        <input type="text" formControlName="coin5" class="form-control" />
+      </div>
+      <div>
+        <button class="btn btn-success">שמירה</button>
+      </div>
+      <span class="result" *ngIf="isCryptoDone">בוצע בהצלחה אח שלייי</span>
+    </form>
+    <form [formGroup]="americaForm" (ngSubmit)="submitAmerica()">
+      <h5>בורסה אמריקאית</h5>
+      <div class="form-group">
+        <div class="example-label">
+          <label class="form-label">מניה 1:</label> <span>(לפי סמל)</span>
+        </div>
+        <div class="inputs-container">
+          <input
+            placeholder="סמל (קובע)"
+            type="text"
+            formControlName="america1symbol"
+            class="form-control"
+          />
+          <input
+            placeholder="שם"
+            type="text"
+            formControlName="america1name"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">מניה 2:</label>
+        <div class="inputs-container">
+          <input
+            placeholder="סמל (קובע)"
+            type="text"
+            formControlName="america2symbol"
+            class="form-control"
+          />
+          <input
+            placeholder="שם"
+            type="text"
+            formControlName="america2name"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">מניה 3:</label>
+        <div class="inputs-container">
+          <input
+            placeholder="סמל (קובע)"
+            type="text"
+            formControlName="america3symbol"
+            class="form-control"
+          />
+          <input
+            placeholder="שם"
+            type="text"
+            formControlName="america3name"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">מניה 4:</label>
+        <div class="inputs-container">
+          <input
+            placeholder="סמל (קובע)"
+            type="text"
+            formControlName="america4symbol"
+            class="form-control"
+          />
+          <input
+            placeholder="שם"
+            type="text"
+            formControlName="america4name"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">מניה 5:</label>
+        <div class="inputs-container">
+          <input
+            placeholder="סמל (קובע)"
+            type="text"
+            formControlName="america5symbol"
+            class="form-control"
+          />
+          <input
+            placeholder="שם"
+            type="text"
+            formControlName="america5name"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-success" [disabled]="americaTimer <= 59">
+          שמירה
+        </button>
+      </div>
+      <span class="result" *ngIf="isAmericaDone"
+        >בוצע בהצלחה, לשמירה הבאה אנא המתן: {{ americaTimer }}</span
+      >
+    </form>
+    <form [formGroup]="israelForm" (ngSubmit)="submitIsrael()">
+      <h5>בורסה ישראלית</h5>
+      <div class="form-group">
+        <div class="example-label">
+          <label class="form-label">מניה 1:</label>
+          <span
+            >(לפי שם -
+            <a class="link" [href]="israelNamesUrl" target="_blank">לכל השמות</a
+            >)</span
+          >
+        </div>
+        <div class="inputs-container">
+          <input
+            placeholder="סמל"
+            type="text"
+            formControlName="israel1symbol"
+            class="form-control"
+          />
+          <input
+            placeholder="שם (קובע)"
+            type="text"
+            formControlName="israel1name"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">מניה 2:</label>
+        <div class="inputs-container">
+          <input
+            placeholder="סמל"
+            type="text"
+            formControlName="israel2symbol"
+            class="form-control"
+          />
+          <input
+            placeholder="שם (קובע)"
+            type="text"
+            formControlName="israel2name"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">מניה 3:</label>
+        <div class="inputs-container">
+          <input
+            placeholder="סמל"
+            type="text"
+            formControlName="israel3symbol"
+            class="form-control"
+          />
+          <input
+            placeholder="שם (קובע)"
+            type="text"
+            formControlName="israel3name"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">מניה 4:</label>
+        <div class="inputs-container">
+          <input
+            placeholder="סמל"
+            type="text"
+            formControlName="israel4symbol"
+            class="form-control"
+          />
+          <input
+            placeholder="שם (קובע)"
+            type="text"
+            formControlName="israel4name"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">מניה 5:</label>
+        <div class="inputs-container">
+          <input
+            placeholder="סמל"
+            type="text"
+            formControlName="israel5symbol"
+            class="form-control"
+          />
+          <input
+            placeholder="שם (קובע)"
+            type="text"
+            formControlName="israel5name"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-success" [disabled]="israelTimer <= 59">
+          שמירה
+        </button>
+      </div>
+      <span class="result" *ngIf="isIsraelDone"
+        >בוצע בהצלחה, לשמירה הבאה אנא המתן: {{ israelTimer }}</span
+      >
+    </form>
+  </div>
+</div>

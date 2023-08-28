@@ -1,0 +1,71 @@
+<div class="top-area">
+  <img
+    [src]="imageUrl"
+    alt="private-lesson"
+    class="private-lesson-image"
+    [class]="appLanguage + '-image'"
+  />
+  <div class="details-container">
+    <div class="details-header-container" [class]="appLanguage + '-header'">
+      <h1 class="page-main-header">{{ langData.header1 }}</h1>
+      <h1
+        class="page-main-header second-h1"
+        [class]="appLanguage + '-second-h1'"
+      >
+        {{ langData.header2 }}
+      </h1>
+    </div>
+    <div class="details" [class]="appLanguage + '-details'">
+      <ul>
+        <li>{{ langData.line1 }}</li>
+        <li>{{ langData.line2 }}</li>
+        <li>{{ langData.line3 }}</li>
+        <li>{{ langData.line4 }}</li>
+        <li>{{ langData.line5 }}</li>
+        <li>{{ langData.line6 }}</li>
+        <li>{{ langData.line7 }}</li>
+      </ul>
+      <div class="details-bottom">
+        <h6>{{ langData.cost }} 499₪</h6>
+        <a (click)="scrollToSyllabus()">{{ langData.syllabusBtn }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="separator-holder">
+  <i class="fa-solid fa-circle-down"></i>
+  <hr />
+</div>
+<div class="reasons-to-work">
+  <div class="reason">
+    <i class="fa-solid fa-business-time"></i>
+    <h6>{{ langData.reason1 }}</h6>
+    <p [innerHTML]="langData.description1"></p>
+  </div>
+  <div class="reason">
+    <i class="fa-regular fa-clock"></i>
+    <h6>{{ langData.reason2 }}</h6>
+    <p [innerHTML]="langData.description2"></p>
+  </div>
+  <div class="reason">
+    <i class="fa-solid fa-chart-line"></i>
+    <h6>{{ langData.reason3 }}</h6>
+    <p [innerHTML]="langData.description3"></p>
+  </div>
+</div>
+<div class="separator-holder" #scrollHere>
+  <hr />
+</div>
+<div class="syllabus-area">
+  <h2 class="syllabus-header">{{ langData.syllabus }}</h2>
+  <div class="syllabus-tables-container">
+    <div class="syllabus-section" *ngFor="let section of syllabus">
+      <h6>{{ section.header }}</h6>
+      <ul>
+        <li *ngFor="let item of section.list">
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

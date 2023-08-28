@@ -1,0 +1,95 @@
+<div class="benefits-page">
+  <h1 class="page-main-header">{{ langData.pageMainHeader }}</h1>
+  <span class="description">{{ langData.pageDescription }}</span>
+  <div class="single-benefit">
+    <h3>{{ langData.excellenceTrade }}</h3>
+    <div class="single-benefit-list">
+      <ul>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          <span>{{ langData.excellenceTradeItem1 }}</span>
+        </li>
+        <hr />
+        <li>
+          <i class="fa-solid fa-check"></i>
+          <span>{{ langData.excellenceTradeItem2 }}</span>
+        </li>
+        <hr />
+        <li>
+          <i class="fa-solid fa-check"></i>
+          <span>{{ langData.excellenceTradeItem3 }}</span>
+        </li>
+        <hr />
+        <li>
+          <i class="fa-solid fa-check"></i>
+          <span>{{ langData.excellenceTradeItem4 }}</span>
+        </li>
+        <hr />
+        <li>
+          <i class="fa-solid fa-check"></i>
+          <span>{{ langData.excellenceTradeItem5 }}</span>
+        </li>
+        <hr />
+        <li>
+          <i class="fa-solid fa-check"></i>
+          <span>{{ langData.excellenceTradeItem6 }}</span>
+        </li>
+        <a href="{{ langData.excellenceTradeLink }}" target="_blank">
+          <app-button style="margin-top: 1rem" buttonText="{{ langData.excellenceTradeBtn }}"></app-button>
+        </a>
+      </ul>
+      <img class="benefit-image" src="{{ imageUrl1 }}" alt="" />
+    </div>
+    <div class="span-area">
+      <span>{{ langData.minAccountOpening }}</span>
+    </div>
+  </div>
+  <hr class="benefits-separator" />
+  <div class="single-benefit">
+    <h3>{{ langData.computerEquipment }}</h3>
+    <div class="single-benefit-list">
+      <ul>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          <span>{{ langData.computerEquipmentItem1 }}</span>
+        </li>
+        <hr />
+        <li>
+          <i class="fa-solid fa-check"></i>
+          <span>{{ langData.computerEquipmentItem2 }}</span>
+        </li>
+        <hr />
+        <li>
+          <i class="fa-solid fa-check"></i>
+          <span>{{ langData.computerEquipmentItem3 }}</span>
+        </li>
+        <hr />
+        <li>
+          <i class="fa-solid fa-check"></i>
+          <span>{{ langData.computerEquipmentItem4 }}</span>
+        </li>
+        <hr />
+        <li>
+          <i class="fa-solid fa-check"></i>
+          <span>{{ langData.computerEquipmentItem5 }}</span>
+        </li>
+        <hr />
+        <li>
+          <i class="fa-solid fa-check"></i>
+          <span>{{ langData.computerEquipmentItem6 }}</span>
+        </li>
+      </ul>
+      <img class="benefit-image" src="{{ imageUrl2 }}" />
+    </div>
+    <div class="customer-links-area">
+      <span>{{ langData.contactInfo }}</span>
+      <a href="tel:+972546697750" target="_blank" class="customer-link">
+        <i class="fa-solid fa-phone fa-flip-horizontal"></i>
+      </a>
+      <a [href]="myWhatsAppLink" target="_blank" class="customer-link">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+    <span>{{ langData.disclaimer }}</span>
+  </div>
+</div>

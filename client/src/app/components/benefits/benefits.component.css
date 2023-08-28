@@ -1,0 +1,128 @@
+.benefits-page {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.single-benefit {
+  margin: 2rem 0;
+  width: 80%;
+  background-color: var(--benefit-bg); /* Notice to handle later! */
+  border-radius: 5px;
+  padding: 1rem 4rem;
+}
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0 2rem;
+}
+.description {
+  padding: 0 1rem;
+}
+
+.single-benefit-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.benefit-image {
+  width: 50%;
+  max-width: 30rem;
+  height: 25rem;
+  border-radius: 20px;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+}
+ul {
+  padding: 1rem 1rem 0;
+  font-size: 1.1rem;
+  text-align: start;
+  list-style-type: none;
+}
+li {
+  margin: 1rem 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.single-benefit-list button:hover {
+  background-position: 100% 0;
+  moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  padding: 0.5rem 1.1rem;
+}
+
+.benefits-separator {
+  width: 80%;
+}
+
+.fa-check {
+  color: var(--text-color-secondary);
+  font-size: 1.8rem;
+}
+.customer-links-area {
+  margin: 3rem 0 1rem;
+}
+.customer-links-area h6 {
+  text-decoration: underline;
+}
+.customer-link {
+  margin: 0 0.5rem;
+  color: var(--darker-text-color); /* Notice to handle later! */
+  text-decoration: none;
+}
+.fa-phone,
+.fa-whatsapp {
+  background-color: var(--bg-color-secondary);
+  padding: 0.7rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px 0 rgba(124, 124, 121, 0.862);
+}
+
+.span-area {
+  text-align: end;
+}
+.span-area > span {
+  font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 1500px) {
+  .single-benefit,
+  .benefits-separator {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 1350px) {
+  .single-benefit,
+  .benefits-separator {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .single-benefit {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .benefit-image {
+    display: none;
+  }
+  .single-benefit-list {
+    justify-content: center;
+    width: 100%;
+  }
+  ul {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  ul {
+    width: 100%;
+  }
+}

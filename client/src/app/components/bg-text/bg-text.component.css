@@ -1,0 +1,64 @@
+.bg-text-container {
+  position: fixed;
+  left: 0;
+  opacity: 0;
+  top: 2rem;
+  overflow: hidden;
+  width: 200%;
+  transition: all 2s ease;
+}
+.bg-text-container > h1 {
+  color: var(--back-text-color);
+  font-size: 23vw;
+  transition: all 0.5s ease;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.bg-text-container > h1:nth-child(2) {
+  margin-top: 2rem;
+  position: relative;
+  bottom: 120px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .bg-text-container {
+    margin-top: 4rem;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .bg-text-container {
+    margin-top: 4rem;
+  }
+  .bg-text-container h1 {
+    font-size: 24vw;
+  }
+  .bg-text-container > h1:nth-child(2) {
+    bottom: 90px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .footer-container hr {
+    display: block;
+  }
+  .bg-text-container {
+    margin-top: 0rem;
+    width: 200%;
+  }
+  .bg-text-container h1 {
+    font-size: 40vw;
+  }
+  .bg-text-container > h1:nth-child(2) {
+    bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .bg-text-container {
+    margin-top: 5rem;
+    margin-left: -10rem;
+    width: 200%;
+  }
+  .bg-text-container h1 {
+    font-size: 40vw;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="page-container home-page">
+  <div class="home-page-section">
+    <img src="../../../assets/images/bitcoin.png" class="bitcoin" />
+    <img src="../../../assets/images/no-head.png" class="no-head-man" />
+    <button class="book-lesson-btn mobile-button" routerLink="/private-lesson">
+      {{ langData.bookLesson }}
+    </button>
+  </div>
+  <div class="home-page-section">
+    <div class="gandi-area">
+      <div class="header-container" [class]="currLanguage">
+        <h1 class="page-main-header">{{ langData.first }} <br /></h1>
+        <h1 class="page-main-header">{{ langData.second }}</h1>
+        <h1 class="page-main-header">{{ langData.gandhi }}</h1>
+      </div>
+      <p>{{ langData.leadingWebsite }}</p>
+      <button class="book-lesson-btn" routerLink="/private-lesson">
+        {{ langData.bookLesson }}
+      </button>
+    </div>
+  </div>
+</div>

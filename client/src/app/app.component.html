@@ -1,0 +1,14 @@
+<ng-container *ngIf="isPageLoaded">
+  <app-header [class]="appLanguage"></app-header>
+  <div class="app-container" [class]="appLanguage">
+    <div
+      class="app"
+      [ngClass]="{ samsungWeb: isSamsung }"
+      (window:scroll)="scroll()"
+    >
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</ng-container>
+<app-bg-text text1="DOR LEVY" text2="INVESTMENTS"></app-bg-text>

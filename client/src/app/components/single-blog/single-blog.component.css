@@ -1,0 +1,126 @@
+.single-blog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.page-main-header {
+  margin: 2rem 2rem 3rem 2rem;
+  text-align: center;
+}
+
+.details-container {
+  font-size: 1.1rem;
+  width: 70%;
+  min-height: 25rem;
+}
+
+h4 {
+  text-align: start;
+  margin: 3rem 0 0;
+}
+
+.carousel-container {
+  width: 70%;
+  margin: 0 auto 3rem;
+  direction: ltr;
+}
+
+.hr-holder {
+  width: 70%;
+}
+hr {
+  border: 1px var(--text-color) solid;
+  margin: 0.5rem;
+}
+
+.links-container {
+  display: flex;
+  width: 70%;
+  justify-content: space-around;
+}
+
+.links-container a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: 0.3s ease;
+}
+.links-container a:hover {
+  color: var(--links-hover-color);
+  font-size: 1.12rem;
+}
+
+.share-post-area {
+  margin-bottom: 3rem;
+  display: flex;
+  width: 70%;
+  justify-content: end;
+  align-items: center;
+}
+.share-post-area h5 {
+  margin-left: 2rem;
+}
+
+.fa-brands,
+.fa-solid {
+  margin: 0.5rem;
+  color: var(--text-color-secondary);
+  font-size: 1.6rem;
+}
+.fa-solid {
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .details-container,
+  .carousel-container,
+  .hr-holder,
+  .links-container {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .carousel-container {
+    margin-bottom: 10rem;
+  }
+  .details-container,
+  .carousel-container,
+  .hr-holder,
+  .links-container {
+    width: 90%;
+  }
+
+  .links-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .share-post-area {
+    justify-content: center;
+  }
+  .page-main-header{
+    font-size: 2.6rem;
+    border: none;
+    margin: 2rem 1rem 3rem;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .carousel-container {
+    padding: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .carousel-container,
+  .hr-holder,
+  .links-container {
+    width: 100%;
+  }
+  .carousel-container {
+    padding: 1rem;
+  }
+}

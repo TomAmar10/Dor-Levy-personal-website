@@ -1,0 +1,33 @@
+<div [class]="currLanguage + '-card'" [ngClass]="{carousel: isCarousel}" class="article-card">
+  <div class="card-header" [routerLink]="getBlogRoute(blog)">
+    <img
+      class="header-bg-img"
+      src="../../../assets/images/blog-bg.jpg"
+      alt=""
+    />
+    <div class="slanted-name">
+      <div>
+        <img class="header-logo" src="../../../assets/images/logo.png" alt="" />
+        <h6>
+          {{ isEnglish ? blog.name_english || blog.name : blog.name }}
+        </h6>
+      </div>
+    </div>
+  </div>
+  <div class="card-details">
+    <h5 [routerLink]="getBlogRoute(blog)">
+      {{
+        isEnglish
+          ? blog.second_name_english || blog.second_name
+          : blog.second_name
+      }}
+    </h5>
+    <button
+      [routerLink]="getBlogRoute(blog)"
+      class="read-more-btn"
+      [class]="currLanguage + '-btn'"
+    >
+      {{ langData.readMore }}
+    </button>
+  </div>
+</div>

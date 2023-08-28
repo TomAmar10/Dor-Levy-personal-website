@@ -1,0 +1,38 @@
+.app-button {
+  padding: 0.5rem 2rem;
+  min-width: 8rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--fifth-color);
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--bg-color-third);
+  background-image: var(--app-button-bg);
+  box-shadow: 0 4px 10px 0 rgba(255, 255, 255, 0.462);
+}
+
+.app-button:hover {
+  box-shadow: 0 6px 15px 0 rgba(255, 255, 255, 0.462);
+  padding: 0.5rem 2.2rem;
+  min-width: 9rem;
+}
+
+.dark {
+  background-image: var(--app-button-bg-dark);
+  color: var(--text-color);
+  box-shadow: 0 4px 10px 0 rgba(171, 148, 70, 0.662);
+}
+.dark:hover{
+  box-shadow: 0 6px 15px 0 rgba(171, 148, 70, 0.662);
+}
+
+.dark > span {
+  margin-right: 0.5rem;
+}

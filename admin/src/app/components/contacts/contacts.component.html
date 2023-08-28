@@ -1,0 +1,44 @@
+<div>
+  <h2>בקשות ליצירת קשר</h2>
+  <table class="table horizontal-table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">שם מלא</th>
+        <th scope="col">אימייל</th>
+        <th scope="col">טלפון</th>
+        <th scope="col">הודעה</th>
+        <th scope="col">-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of contacts$ | async">
+        <td>{{ item.fullName }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.phone }}</td>
+        <td class="message">{{ item.message }}</td>
+        <td class="delete" (click)="deleteContact(item)">מחק</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- -------------------- -->
+  <table class="table vertical-table"  *ngFor="let item of contacts$ | async">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">שם מלא</th>
+        <th scope="col">אימייל</th>
+        <th scope="col">טלפון</th>
+        <th scope="col">הודעה</th>
+        <th scope="col">-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ item.fullName }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.phone }}</td>
+        <td class="message">{{ item.message }}</td>
+        <td class="delete" (click)="deleteContact(item)">מחק</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

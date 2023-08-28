@@ -1,0 +1,107 @@
+.main-page {
+  padding: 2rem;
+  direction: rtl;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1rem;
+}
+
+.single-blog {
+  width: 40% !important;
+}
+.folded-blog {
+  width: 30% !important;
+}
+.fold-btn-holder {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
+.fold-btn {
+  background-color: transparent;
+  color: white;
+  text-decoration: underline;
+  font-weight: 500;
+  border: none;
+}
+
+h1 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.blogs-filter {
+  padding: 0.5rem;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  width: 9rem;
+  background-color: white;
+}
+.active {
+  background-color: rgb(192, 173, 61);
+}
+
+.delete-blog-modal {
+  width: fit-content;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 1;
+  text-align: center;
+  color: black;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.delete-blog-bg {
+  position: fixed;
+  top: 0;
+  width: 100% !important;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.6);
+}
+.delete-blog-modal > button {
+  margin: 1rem 0.5rem;
+  width: 8rem;
+}
+
+@media only screen and (max-width: 1500px) {
+  .main-page {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .single-blog {
+    width: 100% !important;
+  }
+  .folded-blog {
+    width: 47% !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .folded-blog {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .filter-buttons {
+    padding: 0 1rem;
+    flex-wrap: wrap;
+  }
+  .blogs-filter {
+    width: 70%;
+  }
+}

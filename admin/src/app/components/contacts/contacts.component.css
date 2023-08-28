@@ -1,0 +1,51 @@
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+table {
+  width: 70%;
+  direction: rtl;
+  color: white;
+  text-align: center;
+}
+.vertical-table{
+  display: none;
+}
+
+.delete {
+  color: red;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1300px) {
+  table{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  table{
+    display: flex;
+    justify-content: center;
+  }
+  tr{
+    display: flex;
+    flex-direction: column;
+  }
+  thead, tbody{
+    width: 100%;
+  }
+  .horizontal-table{
+    display: none;
+  }
+  .vertical-table{
+    display:flex;
+    margin-bottom: 3rem;
+  }
+}

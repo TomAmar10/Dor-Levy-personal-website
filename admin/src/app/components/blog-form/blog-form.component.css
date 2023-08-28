@@ -1,0 +1,81 @@
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  margin-top: 2rem;
+  direction: rtl;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+.blog-example {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  margin-top: 1rem;
+  width: 50%;
+  border: 1px black solid;
+  padding: 1rem;
+  border-radius: 5px;
+  height: fit-content;
+}
+label {
+  font-size: 1.2rem;
+  margin: 1rem 0 0;
+}
+form textarea {
+  height: 27.5rem;
+}
+.checkbox-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.single-checkbox{
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  padding: 0 0.5rem;
+}
+button {
+  margin: 1rem 0;
+}
+.error-msg {
+  color: red;
+  font-size: 1.1rem;
+}
+.english{
+  direction: ltr;
+}
+
+@media only screen and (max-width: 1000px) {
+  .form-container {
+    flex-direction: column;
+  }
+  .blog-example,
+  form {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  form textarea {
+    height: fit-content;
+  }
+  .form-container {
+    padding: 0 1rem;
+  }
+  .guide {
+    margin-top: 2rem;
+    padding: 0;
+  }
+}

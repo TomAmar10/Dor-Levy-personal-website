@@ -1,0 +1,33 @@
+<div class="blog-box" [ngClass]="{ folded: isFolded, english: isEnglish }">
+  <div class="blog-box-header" [ngClass]="{ wideHeader: !isAdding }">
+    <i class="fa-solid fa-globe" (click)="toggleLang()"></i>
+    <h3 (click)="fold()">
+      {{ isEnglish ? blog.name_english || blog.name : blog?.name }}
+    </h3>
+    <div class="tools" *ngIf="!isAdding">
+      <span class="delete" (click)="onDelete()">❌</span>
+      <span class="edit" [routerLink]="navigateLink">✏️</span>
+    </div>
+  </div>
+  <h6>
+    {{
+      isEnglish
+        ? blog.second_name_english || blog.second_name
+        : blog.second_name
+    }}
+  </h6>
+  <hr />
+  <div class="blog-details">
+    <p
+      [innerHTML]="
+        isEnglish ? blog.details_english || blog.details : blog.details
+      "
+      [ngClass]="{ higher: isAdding }"
+    ></p>
+    <hr />
+    <div>
+      <label>נושא:</label>
+      <span>{{ getSubjects() }}</span>
+    </div>
+  </div>
+</div>

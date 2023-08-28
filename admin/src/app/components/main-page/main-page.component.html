@@ -1,0 +1,45 @@
+<h1>הבלוגים שלי</h1>
+<div class="filter-buttons">
+  <button
+    class="blogs-filter"
+    [ngClass]="{ active: filters.includes('crypto') }"
+    (click)="filter('crypto')"
+  >
+    קריפטו
+  </button>
+  <button
+    class="blogs-filter"
+    [ngClass]="{ active: filters.includes('america') }"
+    (click)="filter('america')"
+  >
+    בורסה אמריקאית
+  </button>
+  <button
+    class="blogs-filter"
+    [ngClass]="{ active: filters.includes('israel') }"
+    (click)="filter('israel')"
+  >
+    בורסה ישראלית
+  </button>
+</div>
+<div class="fold-btn-holder">
+  <button (click)="foldBlogs()" class="fold-btn">קיפול בלוגים</button>
+</div>
+<div class="main-page">
+  <app-single-blog
+    [class]="isFolded ? 'folded-blog' : 'single-blog'"
+    [isFolded]="isFolded"
+    (myEvent)="onBlogDelete(item)"
+    *ngFor="let item of blogsToShow"
+    [blog]="item"
+  ></app-single-blog>
+</div>
+
+<div class="delete-blog-modal" *ngIf="blogToDelete">
+  <h4>תנדור שאתה רוצה למחוק</h4>
+  <span>תנדור נדר שאתה רוצה למחוק את הבלוג</span>
+  <h6>{{ blogToDelete.name }}</h6>
+  <button class="btn btn-success" (click)="removeBlog()">שיקרתי</button>
+  <button class="btn btn-danger" (click)="deleteBlog()">נודר</button>
+</div>
+<div class="delete-blog-bg" *ngIf="blogToDelete" (click)="removeBlog()"></div>

@@ -1,0 +1,62 @@
+<div class="calculator-container">
+  <div class="calculator">
+    <h1 class="page-main-header">{{ langData.header }}</h1>
+    <p [innerHTML]="langData.paragraph"></p>
+    <form [formGroup]="calculator_form" (ngSubmit)="calculate()">
+      <div class="form-group">
+        <label for="buy" class="form-label">{{ langData.buy }}</label>
+        <input
+          type="number"
+          id="buy"
+          class="form-control"
+          formControlName="buy"
+        />
+      </div>
+      <div class="form-group">
+        <label for="sell" class="form-label">{{ langData.sell }}</label>
+        <input
+          type="number"
+          id="sell"
+          class="form-control"
+          formControlName="sell"
+        />
+      </div>
+      <div class="form-group">
+        <label for="amount" class="form-label">{{ langData.amount }}</label>
+        <input
+          type="number"
+          id="amount"
+          class="form-control"
+          formControlName="amount"
+        />
+      </div>
+      <div class="calculator-bottom">
+        <app-button buttonText="{{ langData.calculateBtn }}"></app-button>
+        <div *ngIf="result || result === 0" class="result-area">
+          <div>
+            <span
+              >{{ langData.percentage }}
+              {{ result < 0 ? langData.losses : langData.profits }}
+              {{ langData.fromTrade }} </span
+            ><span class="result" [ngClass]="{ minus: result < 0 }"
+              >{{ result }}%</span
+            >
+          </div>
+          <div *ngIf="amountResult">
+            <span
+              >{{ result < 0 ? langData.loss : langData.profit }}
+              {{ langData.fromTrade }}</span
+            >
+            <span class="result" [ngClass]="{ minus: result < 0 }">
+              {{ amountResult }}$
+            </span>
+          </div>
+        </div>
+        <div *ngIf="error" class="error">{{ error }}</div>
+      </div>
+    </form>
+  </div>
+  <div class="calculator-img">
+    <img [src]="imageUrl" alt="calculate" />
+  </div>
+</div>

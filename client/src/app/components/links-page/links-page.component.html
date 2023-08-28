@@ -1,0 +1,84 @@
+<div class="header-container">
+  <h1 class="page-main-header">{{ langData.header }}</h1>
+</div>
+<div class="image-area">
+  <div class="main-paragraph">
+    <h5>{{ langData.smallHeader }}</h5>
+    <p [innerHTML]="langData.paragraph"></p>
+  </div>
+  <img [src]="imageUrl" alt="links" />
+</div>
+<div class="links-area">
+  <div
+    class="link-box"
+    (click)="goTo('https://web.telegram.org/k/#@bursaISRAEL')"
+  >
+    <div class="link-category">
+      <h5>{{ langData.telegramIsrael }}</h5>
+      <i class="fa-brands fa-telegram"></i>
+    </div>
+    <div class="details">
+      <span>{{ langData.telegramIsraelAmount }}</span>
+    </div>
+  </div>
+  <div
+    class="link-box"
+    (click)="goTo('https://web.telegram.org/k/#@bursaInUSA')"
+  >
+    <div class="link-category">
+      <h5>{{ langData.telegramAmerica }}</h5>
+      <i class="fa-brands fa-telegram"></i>
+    </div>
+    <div class="details">
+      <span>{{ langData.telegramAmericaAmount }}</span>
+    </div>
+  </div>
+  <div
+    class="link-box"
+    (click)="goTo('https://web.telegram.org/k/#@Cryptowithdor')"
+  >
+    <div class="link-category">
+      <h5>{{ langData.telegramCrypto }}</h5>
+      <i class="fa-brands fa-telegram"></i>
+    </div>
+    <div class="details">
+      <span>{{ langData.telegramCryptoAmount }}</span>
+    </div>
+  </div>
+  <div
+    class="link-box"
+    (click)="goTo('https://chat.whatsapp.com/Fclos8MihK3CqJnfpib7t1')"
+  >
+    <div class="link-category">
+      <h5>{{ langData.whatsappIsrael }}</h5>
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+    <div class="details">
+      <span>{{ langData.full }}</span>
+    </div>
+  </div>
+  <div
+    class="link-box"
+    (click)="goTo('https://chat.whatsapp.com/GepBe0kFYjgCcPA7x3qyUL')"
+  >
+    <div class="link-category">
+      <h5>{{ langData.whatsappCrypto }}</h5>
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+    <div class="details">
+      <span>{{ langData.full }}</span>
+    </div>
+  </div>
+  <div
+    class="link-box"
+    (click)="goTo('https://www.facebook.com/groups/271073134923240')"
+  >
+    <div class="link-category">
+      <h5>{{ langData.facebook }}</h5>
+      <i class="fa-brands fa-facebook"></i>
+    </div>
+    <div class="details">
+        <span>{{langData.facebookAmount}}</span>
+    </div>
+  </div>
+</div>

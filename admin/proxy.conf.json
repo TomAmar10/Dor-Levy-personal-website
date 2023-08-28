@@ -1,0 +1,6 @@
+{
+  "/": {
+    "target": "https://dor-server-7a1123ae3d0f.herokuapp.com",
+    "secure": false
+  }
+}

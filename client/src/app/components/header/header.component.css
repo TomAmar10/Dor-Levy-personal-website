@@ -1,0 +1,213 @@
+.header-bg-fixed {
+  height: 6rem;
+  z-index: 20;
+}
+
+.navbar {
+  padding: 0;
+  height: 6rem;
+  z-index: 40;
+  background-color: var(--bg-color);
+  background-image: var(--bg-img-main);
+}
+
+.container-fluid {
+  width: 100%;
+  display: flex;
+  gap: 3rem;
+  padding: 0 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-img {
+  width: 7rem;
+  height: 6rem;
+  cursor: pointer;
+}
+
+.focus {
+  color: var(--text-color-secondary);
+}
+
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.dropdown-toggle {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.dropdown-menu {
+  min-width: 13rem;
+  text-align: end;
+  border-radius: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  box-shadow: rgba(255, 255, 255, 0.15) 0px 5px 15px;
+  padding: 0;
+  right: 0;
+}
+.dropdown-menu li {
+  padding: 0.8rem;
+}
+.dropdown-menu li:not(:last-child) {
+  border-bottom: 1px rgb(77, 77, 77) solid;
+}
+.dropdown-menu li:hover {
+  background-color: var(--menu-item-hover-bg);
+  color: var(--text-color-secondary);
+  cursor: pointer;
+}
+.blogs-menu {
+  height: fit-content;
+  overflow: hidden;
+  width: 100%;
+}
+
+.dropdown-toggle:hover + .blogs-dropdown {
+  display: block;
+}
+.blogs-dropdown:hover {
+  display: block;
+}
+.nav-link {
+  color: var(--text-color);
+}
+.nav-link:hover {
+  cursor: pointer;
+  animation: grow 0.5s;
+  transform: scale(1.1);
+  color: var(--fourth-color);
+}
+.nav-link.focus {
+  color: var(--text-color-secondary);
+}
+
+.fa-brands,
+.navbar-toggle-button {
+  font-size: 1.5rem;
+  color: var(--text-color-secondary);
+}
+.fa-envelope,
+.fa-globe {
+  color: var(--text-color-secondary);
+  font-size: 1.4rem;
+}
+.fa-brands:hover,
+.fa-envelope:hover,
+.fa-globe:hover {
+  animation: pulse 1s infinite;
+  cursor: pointer;
+}
+
+.navbar-menu {
+  width: 100%;
+  position: absolute;
+  top: 6rem;
+  right: 0;
+  text-align: end;
+  cursor: auto;
+  max-height: 0 !important;
+  scrollbar-width: none;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+  transition: all 0.5s ease;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  background-image: var(--bg-img-main);
+  overflow: auto;
+}
+.open-menu {
+  max-height: 70vh !important;
+  transition: all 0.5s ease;
+}
+.navbar-menu::-webkit-scrollbar {
+  width: 0.5em;
+}
+.navbar-menu::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+.navbar-menu::-moz-scrollbar {
+  display: none; /* Older versions of Firefox */
+}
+.menu-item {
+  text-decoration: none;
+  width: 100%;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+  border-bottom: 1px rgba(137, 136, 136, 0.453) solid;
+  color: var(--text-color);
+}
+.blogs-menu > a.menu-item {
+  padding: 1rem 3rem;
+}
+.menu-item:hover {
+  color: var(--menu-item-hover-text);
+  background-color: var(--menu-item-hover-bg);
+  cursor: pointer;
+}
+.menu-item.focus {
+  background-color: var(--menu-item-hover-bg);
+}
+
+/* English styles */
+.blogs-english {
+  right: auto;
+  left: 0;
+}
+.english-container {
+  direction: rtl;
+}
+.english-container .dropdown-menu {
+  left: 0;
+}
+/* English styles */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  85% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .container-fluid {
+    padding: 0 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .contact-img {
+    display: none;
+  }
+
+  .navbar-brand {
+    width: 12%;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .logo-img {
+    margin-top: -0.5rem;
+    width: 6rem;
+    height: 5rem;
+  }
+}
